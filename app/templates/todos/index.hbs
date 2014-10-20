@@ -1,14 +1,9 @@
 <ul id="todo-list">
-  <li class="completed">
-    <input type="checkbox" class="toggle">
-    <label>Update my resume</label><button class="destroy"></button>
-  </li>
-  <li>
-    <input type="checkbox" class="toggle">
-    <label>Answer the code camp short-answer questions!</label><button class="destroy"></button>
-  </li>
-  <li>
-    <input type="checkbox" class="toggle">
-    <label>Apply to code camp!</label><button class="destroy"></button>
-  </li>
+  {{#each todo in model}}
+    <li {{bind-attr class="todo.isCompleted:completed"}}>
+      <input type="checkbox" class="toggle">
+      <label>{{todo.title}}</label>
+      <button class="destroy"></button>
+    </li>
+  {{/each}}
 </ul>
